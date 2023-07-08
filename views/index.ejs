@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1 class="display-3">LoL Champions</h1>
+    <div class="container-fluid">
+      <div class="row justify-content-center gap-3">
+        <% for( let i = 0; i < champions.length; i++ ) { %>
+
+          <div class="card" style="width: 300px;">
+            <h5 class="card-header text-center"><%= champions[i].name %></h5>
+            <div class="card-body">
+                <img style="width: 100px;" class="img-thumbnail mb-2" src="<%= champions[i].icon %>" alt="<%= champions[i].name %>">
+              <h5 class="card-title"><%= champions[i].title %></h5>
+              <p class="card-text"><%= champions[i].description.substring(0, 50) %> ...</p>
+              <a href="/champion/<%= champions[i].id %>" class="btn btn-primary">Look <%= champions[i].name %></a>
+            </div>
+          </div>
+
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

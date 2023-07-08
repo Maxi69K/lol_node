@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= champion.name %></title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+
+    <div class="card text-center m-auto my-3" style="max-width: 600px;">
+      <div class="card-header">
+        <h1><%= champion.name %></h1>
+        <img
+          src="<%= champion.icon %>"
+          class="card-img-top img-fluid"
+          style="width: 300px;"
+          alt="..."
+        />
+        <h2><%= champion.title %></h2>
+      </div>
+      <div class="card-body">
+
+        <% champion.tags.forEach(el => { %>
+            <span class="badge bg-<%= colors[el] %> mb-3"><%= el %></span>
+        <% }) %>
+
+        <p class="card-text">
+          <%= champion.description %>
+        </p>
+        <a href="/" class="btn btn-sm btn-primary">Go back</a>
+        <!-- <a href="/delete/<%= champion.id %>" class="btn btn-sm btn-danger">Delete</a> -->
+      </div>
+      <div class="card-footer text-body-secondary">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">hp: <%= champion.stats.hp %></li>
+          <li class="list-group-item">
+            hpperlevel: <%= champion.stats.hpperlevel %>
+          </li>
+          <li class="list-group-item">mp: <%= champion.stats.mp %></li>
+          <li class="list-group-item">
+            mpperlevel: <%= champion.stats.mpperlevel %>
+          </li>
+          <li class="list-group-item">
+            movespeed: <%= champion.stats.movespeed %>
+          </li>
+          <li class="list-group-item">armor: <%= champion.stats.armor %></li>
+          <li class="list-group-item">
+            armorperlevel: <%= champion.stats.armorperlevel %>
+          </li>
+          <li class="list-group-item">
+            spellblock: <%= champion.stats.spellblock %>
+          </li>
+          <li class="list-group-item">
+            spellblockperlevel: <%= champion.stats.spellblockperlevel %>
+          </li>
+          <li class="list-group-item">
+            attackrange: <%= champion.stats.attackrange %>
+          </li>
+          <li class="list-group-item">
+            hpregen: <%= champion.stats.hpregen %>
+          </li>
+          <li class="list-group-item">
+            hpregenperlevel: <%= champion.stats.hpregenperlevel %>
+          </li>
+          <li class="list-group-item">
+            mpregen: <%= champion.stats.mpregen %>
+          </li>
+          <li class="list-group-item">
+            mpregenperlevel: <%= champion.stats.mpregenperlevel %>
+          </li>
+          <li class="list-group-item">crit: <%= champion.stats.crit %></li>
+          <li class="list-group-item">
+            critperlevel: <%= champion.stats.critperlevel %>
+          </li>
+          <li class="list-group-item">
+            attackdamage: <%= champion.stats.attackdamage %>
+          </li>
+          <li class="list-group-item">
+            attackdamageperlevel: <%= champion.stats.attackdamageperlevel %>
+          </li>
+          <li class="list-group-item">
+            attackspeedperlevel: <%= champion.stats.attackspeedperlevel %>
+          </li>
+          <li class="list-group-item">
+            attackspeed: <%= champion.stats.attackspeed %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+</html>
